@@ -33,9 +33,10 @@ void replace(list<T> &l, T v, list<T> replaceValue) {
   for (auto it = l.begin(); it != l.end(); it++) {
     if (*it == v) {
       it = l.erase(it);
-      for (auto it1 = replaceValue.rbegin(); it1 != replaceValue.rend(); it1++) {
-        it = l.insert(it, *it1);
-      }
+      // for (auto it1 = replaceValue.rbegin(); it1 != replaceValue.rend(); it1++) {
+      //   it = l.insert(it, *it1);
+      // }
+      l.insert(it, replaceValue.begin(), replaceValue.end());
       break;
     }
   }
